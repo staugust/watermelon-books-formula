@@ -1,0 +1,58 @@
+\documentclass{article}
+   \title{Hello World}
+   \author {Augusto}
+   \usepackage{ctex}
+   \usepackage{amssymb}
+   \usepackage{amsmath}
+\begin{document}
+
+\begin{equation}\label{gini}
+\begin{split}
+  Gini(D) & = \sum\nolimits_{k=1}^{\left|y\right|}\sum_{k'\neq k}^{}p_kp_{k'} =1 - \sum\nolimits_{k=1}^{\left|y\right|}p_k^2
+\end{split}
+\end{equation}
+
+\begin{equation}\label{ginia}
+  Gini\_index(D,a) = \sum\nolimits_{v=1}^{V}\frac{\left|D^v\right|}{\left|D\right|}Gini(D^v)
+\end{equation}
+
+\begin{equation}\label{argmin}
+  a_* = \mathop{\arg\min}_{a \in A} Gini_index(D,a)
+\end{equation}
+
+\begin{equation}\label{sort}
+  \{a^1,a^2,...,a^n\}
+\end{equation}
+
+\begin{equation}\label{at}
+  a^v
+\end{equation}
+
+\begin{equation}\label{tilde}
+  \tilde{p}_k = \tilde{r}_v
+\end{equation}
+
+\begin{equation}\label{s}
+  \sum\nolimits_{k = 1}^{\left|y\right|}\tilde{p}_k = 1
+\end{equation}
+
+\begin{equation}\label{ss}
+  \sum\nolimits_{v=1}^{V}\tilde{r}_v = 1
+\end{equation}
+
+\begin{equation}\label{gain_ex}
+\begin{split}
+  Gain(D,a) & = \rho \times Gain(\tilde{D},a) \\
+   & = \rho \times \left( Ent(\tilde{D}) - \sum\nolimits_{v=1}^{V}\tilde{r}_vEnt(\tilde{D}^v)\right)
+\end{split}
+\end{equation}
+
+\begin{equation}\label{ent}
+  Ent(\tilde{D}) = - \sum\nolimits_{k=1}^{\left|y\right|}\tilde{p}_k\log_2\tilde{p}_k
+\end{equation}
+
+\begin{equation}\label{multi}
+  \sum\nolimits_{i=1}^{d}w_ia_i=t
+\end{equation}
+
+\end{document}

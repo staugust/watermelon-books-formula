@@ -1,0 +1,103 @@
+\documentclass{article}
+   \title{Hello World}
+   \author {Augusto}
+   \usepackage{ctex}
+   \usepackage{amssymb}
+   \usepackage{amsmath}
+\begin{document}
+\begin{equation}\label{set}
+  D = \{(x_1,y_1),(x_2,y_2),...,(x_m,y_m)\}, x_i \in \mathbb{R}^d, y_i \in \mathbb{R}^l
+\end{equation}
+
+\begin{equation}\label{sample}
+  (x_k,y_k)
+\end{equation}
+\begin{equation}\label{output}
+  \hat{y}_k = (\hat{y}_1^k, \hat{y}_2^k,...,\hat{y}_l^k)
+\end{equation}
+
+\begin{equation}\label{yk}
+  \hat{y}_j^k = f(\beta_j - \theta_j)
+\end{equation}
+
+\begin{equation}\label{error}
+  E_k = \frac{1}{2}\sum\nolimits_{j=1}^{l}( \hat{y}_j^k - y_j^k)^2
+\end{equation}
+
+\begin{equation}\label{deltaw}
+  \Delta w_{hj} = - \eta \frac{\partial E_k}{\partial w_{hj}}
+\end{equation}
+
+\begin{equation}\label{chain}
+  \frac{\partial E_k}{\partial w_hj} = \frac{\partial E_k}{\partial \hat{y}_j^k} \cdot \frac{\partial \hat{y}_j^k}{\partial \beta_j} \cdot \frac{\partial \beta_j}{\partial w_{hj}}
+\end{equation}
+
+\begin{equation}\label{bh}
+  b_h
+\end{equation}
+
+\begin{equation}\label{gj}
+\begin{split}
+  g_j & = - \frac{\partial E_k}{\partial \hat{y}_j^k} \cdot \frac{\partial \hat{y}_j^k}{\partial \beta_j} \\
+   & = -(\hat{y}_j^k - y_j^k)f'(\beta_j - \theta_j) \\
+   & = \hat{y}_j^k(1- \hat{y}_j^k)(y_j^k - \hat{y}_j^k)
+\end{split}
+\end{equation}
+
+\begin{equation}\label{whj}
+\begin{split}
+  \Delta w_{hj} & = - \eta \frac{\partial E_k}{\partial w_{hj}} \\
+   & = \eta g_j b_h
+\end{split}
+\end{equation}
+
+\begin{equation}\label{sigmoidpartial}
+\begin{split}
+  f(x) & = \frac{1}{1 + e ^{-x}} \\
+  f(x)' & = f(x)(1-f(x))
+\end{split}
+\end{equation}
+
+\begin{equation}\label{ykj}
+  \hat{y}_j^k = f(\beta _j - \theta _j)
+\end{equation}
+
+\begin{equation}\label{thetaj}
+\begin{split}
+  \Delta \theta _j & = - \eta g_j \\
+  \Delta v_{ih} & = \eta e_hx_i \\
+  \Delta \gamma _h & = - \eta e_h
+\end{split}
+\end{equation}
+
+\begin{equation}\label{eh}
+  \begin{split}
+     e_h & = - \frac{\partial E_k}{\partial b_h} \cdot \frac{\partial b_h}{\partial \alpha _h} \\
+       & =  - \sum\nolimits_{j=1}^{l} \frac{\partial E_k}{\partial \beta _j} \cdot \frac{\partial \beta _j}{\partial b_h} f'(\alpha _h - \gamma _h)  \\
+       & = \sum\nolimits_{j=1}^{l}w_{hj}g_jf'(\alpha _h - \gamma _h) \\
+       &  = b_h(1 - b_h) \sum\nolimits_{j-1}^{l}w_{hj}g_j
+  \end{split}
+\end{equation}
+
+\begin{equation}\label{E }
+  E = \lambda \frac{1}{m}\sum\nolimits_{k=1}^{m}E_k + (1 - \lambda)\sum\nolimits_{i}w_i^2
+\end{equation}
+
+\begin{equation}\label{rbff}
+  \rho(x,c_i) = e^{-\beta _i\left\|x-c_i\right\|^2}
+\end{equation}
+\begin{equation}\label{rbfl}
+  \varphi(x) = \sum\nolimits_{i=1}^{q}w_i \rho (x,c_i)
+\end{equation}
+
+\begin{equation}\label{relu}
+  f(x) = \left\{ \begin{array}{cc}
+                   0, & \text{ if $x < 0$, }\\
+                   x, & \text{  otherwise,}
+                 \end{array}\right.
+\end{equation}
+
+
+
+
+\end{document}

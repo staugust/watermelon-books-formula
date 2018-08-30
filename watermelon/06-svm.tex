@@ -1,0 +1,114 @@
+\documentclass{article}
+   \title{Hello World}
+   \author {Augusto}
+   \usepackage{ctex}
+   \usepackage{amssymb}
+   \usepackage{amsmath}
+\begin{document}
+\begin{equation}\label{wx}
+  y = wx
+\end{equation}
+
+\begin{equation}\label{1}
+  w^T \cdot x +b = 0
+\end{equation}
+
+\begin{equation}\label{r}
+  r = \frac{\left|w^T \cdot x + b\right|}{||w||}
+\end{equation}
+
+\begin{equation}\label{gamma}
+  \gamma  = \frac{2}{||w||}
+\end{equation}
+
+\begin{equation}\label{fx}
+  \left\{ \begin{array}{cc}
+            w^Tx_i + b \geq +1, & y_i = +1 \\
+            w^Tx_i + b \leq -1, & y_i = -1
+          \end{array}\right.
+\end{equation}
+
+\begin{equation}\label{tar}
+  \mathop{\arg\min}_{(w,b)} \frac{2}{||w||}
+\end{equation}
+
+\begin{equation}\label{y}
+  y_i(w^Tx_i + b) \geq 1, i = 1,2,...,m
+\end{equation}
+
+\begin{equation}\label{e}
+  \mathop{\arg\min}_{(w,b)} \frac{1}{2}{||w||}^2
+\end{equation}
+
+\begin{equation}\label{e2}
+  y_i(w^Tx_i + b) \geq 1, i = i,2,...,m
+\end{equation}
+
+\begin{equation}\label{dual}
+  L(w,b,\alpha) = \frac{1}{2} {||w||}^2 + \sum\nolimits_{i=1}^{m}\alpha_i(1 - y_i(w^Tx_i+b))
+\end{equation}
+
+\begin{equation}\label{partialderivative}
+ \begin{split}
+     & w = \sum\nolimits_{i=1}^{m}\alpha_iy_ix_i \\
+      & 0 = \sum\nolimits_{i=1}^{m}\alpha_iy_i
+ \end{split}
+\end{equation}
+
+\begin{equation}\label{alpha}
+\begin{split}
+     \mathop{\max}_{\alpha} & \sum\nolimits_{i = 1}^{m} \alpha_i - \frac{1}{2} \sum\nolimits_{i=1}^{m}\sum\nolimits_{j=1}^{m} \alpha_i \alpha_j y_i y_jx_i^Tx_j \\
+     s.t. & \sum\nolimits_{i=1}^{m}\alpha_iy_i = 0, \alpha_i \geq 0, i = 1,2,...,m
+\end{split}
+\end{equation}
+
+\begin{equation}\label{model}
+\begin{split}
+   f(x) & = w^Tx + b \\
+     & = \sum\nolimits_{i=1}^{m}\alpha_iy_ix_i^Tx+b
+\end{split}
+\end{equation}
+
+
+\begin{equation}\label{constraints}
+  \left\{ \begin{aligned}
+            & \alpha_i \geq 0; \\
+            & y_if(x_i) -1 \geq 0; \\
+            & \alpha_i(y_if(x_i) -1) = 0
+          \end{aligned}\right.
+\end{equation}
+
+\begin{equation}\label{tt}
+\begin{aligned}
+   \mathop{\arg\min}_{(w,b)}  &  \text{ }\frac{1}{2}{||w||}^2 \\
+  s.t. & \text{ }  y_i(w^T\phi(x_i) + b) \geq 1, i = 1,2,...,m
+\end{aligned}
+\end{equation}
+
+\begin{equation}\label{ttd}
+\begin{aligned}
+  \mathop{\max}_{\alpha} & \space \sum\nolimits_{i = 1}^{m} \alpha_i - \frac{1}{2} \sum\nolimits_{i=1}^{m}\sum\nolimits_{j=1}^{m} \alpha_i \alpha_j y_i y_j{\phi(x_i)}^T\phi(x_j) \\
+     s.t. &\space \sum\nolimits_{i=1}^{m}\alpha_iy_i = 0, \alpha_i \geq 0, i = 1,2,...,m
+\end{aligned}
+\end{equation}
+
+\begin{equation}\label{predd}
+  f(x) = w^T\phi(x) + b = \sum\nolimits_{i=1}^{m}\alpha_iy_i{\phi(x_i)}^T\phi(x) + b
+\end{equation}
+
+\begin{equation}\label{kernel}
+  \kappa(x_i,x_j) = \phi(x_i)^T\phi(x_j)
+\end{equation}
+
+\begin{equation}\label{p1}
+  \gamma_1\kappa_1 + \gamma_2\kappa_2
+\end{equation}
+\begin{equation}\label{p2}
+  \kappa_1 \otimes \kappa_2(x,z) = \kappa_1(x,z)\kappa_2(x,z)
+\end{equation}
+
+\begin{equation}\label{p3}
+  \kappa(x,z) = g(x)\kappa_1(x,z)g(z)
+\end{equation}
+
+\end{document}
